@@ -51,8 +51,6 @@
         android:layout_gravity="center"
         android:textSize="18sp"/>
 
-
-
     <TextView
         android:id="@+id/recieve_text"
         android:text="收到"
