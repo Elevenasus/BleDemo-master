@@ -86,9 +86,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onLeScan(final BluetoothDevice device, int rssi, byte[] scanRecord) {
 
-//            Log.d(TAG, "onLeScan:  " + device.getName() + " : " + rssi);
             String name = device.getName();
-//            Log.d(TAG, "名称:  " + name + " : ");
             if (name != null) {
                 if (name.contains("SV-H1")) {
                     deviceName.setText(name);
@@ -110,26 +108,10 @@ public class MainActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-//                    boolean isSame = true;
                     if (bluetoothDevice != null && bluetoothDevice.getName() != null) {
                         if (bluetoothDevice.getName().equals("SV-H1")){
                             Log.e("222222","蓝牙设备==" + bluetoothDevice.getName() + bluetoothDevice.getAddress());
-//                            scanner.stopScan(scanCallback);
                         }
-//                        strDevice =bluetoothDevice.getName() + "|" + bluetoothDevice.getAddress();
-//                        for (BluetoothDevice bd : listDevices) {
-//                            if (bd.getAddress().equalsIgnoreCase(bluetoothDevice.getAddress())) {
-//                                isSame = false;
-//                            }
-//                        }
-//
-//                        if (isSame) {
-//                            listDevices.add(bluetoothDevice);
-//                            listDeviceName.add(new TieBean(strDevice));
-//                            if (bleDeviceAdapter != null) {
-//                                bleDeviceAdapter.notifyDataSetChanged();
-//                            }
-//                        }
                     }
                 }
             });
@@ -170,7 +152,6 @@ public class MainActivity extends AppCompatActivity {
         // 定义一个回调接口供扫描结束处理
 //        scanner.startScan(scanCallback);
         mBluetoothAdapter.startLeScan(mLeScanCallback);
-
     }
 
     private String TAG = "haha";
